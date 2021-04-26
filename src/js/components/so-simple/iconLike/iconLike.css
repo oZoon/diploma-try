@@ -1,0 +1,14 @@
+.card-svg-red {
+    width: 16px;
+    height: 32px;
+    margin-right: 8px;
+
+    fill: red;
+}
+.card-svg-black {
+    width: 16px;
+    height: 32px;
+    margin-right: 8px;
+
+    fill: black;
+}

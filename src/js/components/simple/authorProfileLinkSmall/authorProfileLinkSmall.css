@@ -1,0 +1,40 @@
+.link-unsplash {
+    position: absolute;
+    z-index: 2;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: white;
+    border: 0;
+    font-family: Tahoma;
+    font-size: 14px;
+    font-weight: 600;
+}
+.link-container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+.link-name {
+    color: white;
+    font-family: Tahoma;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+}
+.link-username {
+    color: rgb(209, 209, 209);
+    font-family: Tahoma;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 10px;
+}
+.link-username:hover {
+    color: white;
+}

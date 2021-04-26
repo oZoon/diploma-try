@@ -1,0 +1,23 @@
+.logout {
+    padding: 8px 16px;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: inherit;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-family: Tahoma;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 15px;
+}
+.logout:hover {
+    background-color: #dadada;
+}
+.logout:active {
+    outline: none;
+    background-color: #8c8c8c;
+}
+.logout:focus {
+    outline: none;
+}

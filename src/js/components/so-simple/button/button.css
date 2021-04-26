@@ -1,0 +1,162 @@
+.button {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 12px 0 24px;
+    padding: 8px 24px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #f6f6f6;
+    font-family: Tahoma;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.button:hover {
+    background-color: #dadada;
+}
+.button:active {
+    outline: none;
+    background-color: #8c8c8c;
+}
+.button:focus {
+    outline: none;
+}
+.button[disabled] {
+    cursor: not-allowed;
+    opacity: .5;
+}
+.button.invert {
+    border: 1px solid black;
+    background-color: #b8b8b8;
+}
+.button.invert:hover {
+    background-color: #a3a3a3;
+}
+.button.invert:focus {
+    outline: none;
+}
+.button.invert:active {
+    outline: none;
+    background-color: #8c8c8c;
+}
+.button-next-photos {
+    z-index: 2;
+    display: flex;
+    margin: 0 auto;
+    padding: 10px 30px;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: inherit;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-family: Tahoma;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 15px;
+}
+.button-next-photos:hover,
+.button-first-photos:hover {
+    background-color: #dadada;
+}
+.button-next-photos:active,
+.button-next-photos:focus,
+.button-first-photos:active,
+.button-first-photos:focus,
+.button-move-top:active,
+.button-move-top:focus,
+.button-move-bottom:active,
+.button-move-bottom:focus {
+    outline: none;
+}
+.button-next-photos:active,
+.button-first-photos:active {
+    background-color: #8c8c8c;
+}
+.button-move-top {
+    position: fixed;
+    top: 70px;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;
+}
+.button-move-bottom {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;
+}
+.button-move-top:hover,
+.button-move-bottom:hover {
+    background-color: whitesmoke;
+    box-shadow: 0 0 3px 1px rgba(0,0,0,.5);
+}
+.button-move-top:active,
+.button-move-bottom:active {
+    background-color: #dadada;
+    box-shadow: 0 0 4px 2px rgba(0,0,0,.5);
+}
+.arrow {
+    width: 30px;
+    padding-top: 6px;
+    padding-bottom: 4px;
+    border: 0;
+    background-color: transparent;
+}
+.button-first-photos {
+    z-index: 2;
+    display: flex;
+    margin: 100px auto;
+    padding: 10px 30px;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: inherit;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-family: Tahoma;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 15px;
+}
+.btn-go-back {
+    position: absolute;
+    z-index: 2;
+    top: 220px;
+    left: 12px;
+    padding: 8px 10px;
+    cursor: pointer;
+    color: black;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: white;
+}
+.button-like {
+    position: absolute;
+    top: 12px;
+    left: 160px;
+    padding: 0 10px;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: white;
+}
+.btn-go-back:active,
+.button-like:active,
+.btn-go-back:focus,
+.button-like:focus {
+    outline: none;
+}
+.btn-go-back:hover,
+.button-like:hover {
+    background-color: #ededed;
+}

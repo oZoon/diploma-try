@@ -1,0 +1,34 @@
+.header-item {
+    margin-right: 90px;
+}
+.header-item-link {
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: inherit;
+    font-family: Tahoma;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 15px;
+}
+.header-item-no-link {
+    cursor: default;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: inherit;
+    font-family: Tahoma;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 15px;
+}
+.header-item-logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    font-family: Tahoma;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 30px;
+}

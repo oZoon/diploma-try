@@ -1,0 +1,28 @@
+.link-unsplash-big {
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    color: darkgray;
+    border: 0;
+}
+.link-name-big {
+    font-family: Tahoma;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+}
+.link-username-big {
+    font-family: Tahoma;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+}
+.link-unsplash-big:hover {
+    color: black;
+}

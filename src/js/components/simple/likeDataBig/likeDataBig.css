@@ -1,0 +1,20 @@
+.like-big-red {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    color: red;
+    font-family: Tahoma;
+    font-size: 15px;
+    line-height: 15px;
+}
+.like-big-black {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    color: black;
+    font-family: Tahoma;
+    font-size: 15px;
+    line-height: 15px;
+}

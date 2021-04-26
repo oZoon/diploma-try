@@ -1,0 +1,24 @@
+.header {
+    position: fixed;
+    z-index: 10;
+    top: 8px;
+    right: 8px;
+    left: 8px;
+    height: 50px;
+    color: black;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;
+}
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    width: 960px;
+    height: 100%;
+    margin: 0 auto;
+    padding-right: 24px;
+    padding-left: 24px;
+    /* outline: 1px solid red; */
+}

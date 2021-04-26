@@ -1,0 +1,11 @@
+/* .content-plug {
+    font-family: Tahoma;
+    font-size: 15px;
+} */
+.content-base {
+    z-index: 2;
+    display: flex;
+    width: 960px;
+    margin: 0 auto;
+    padding-top: 60px;
+}

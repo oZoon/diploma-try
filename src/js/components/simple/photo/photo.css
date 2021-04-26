@@ -1,0 +1,20 @@
+.content-card {
+    position: relative;
+    width: 300px;
+    margin-bottom: 30px;
+}
+.image-card {
+    outline: 2px solid black;
+    outline-offset: -2px;
+}
+.opacity-layer-card {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.opacity-layer-card:hover {
+    box-shadow: inset 0 0 150px 75px rgba(0,0,0,.3);
+}

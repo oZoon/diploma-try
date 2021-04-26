@@ -1,0 +1,9 @@
+.big-image {
+    /* margin: 0 auto; */
+    /* width: 300px; */
+    /* height: auto; */
+    /* border-radius: 6px; */
+    outline: 2px solid black;
+    outline-offset: -2px;
+    /* background-color: lightgray; */
+}

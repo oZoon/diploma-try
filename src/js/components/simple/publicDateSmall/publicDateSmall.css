@@ -1,0 +1,17 @@
+.date-small {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    flex-direction: column;
+    cursor: default;
+    color: white;
+    text-shadow: black 0 0 7px;
+    font-family: Tahoma;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+}
+.date-small:hover {
+    cursor: pointer;
+}
