@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import IconLike from 'so-simple/iconLike';
-import Text from 'so-simple/text';
+import IconLike from '../../so-simple/iconLike';
+import Text from '../../so-simple/text';
 
 import './likeDataSmall.css';
 

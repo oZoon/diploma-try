@@ -3,7 +3,7 @@ import {
     LOG_IN_SUCCESS,
     LOG_IN_ERROR,
     LOG_OUT,
-} from "lib/constants";
+} from '../../lib/constants.js';
 
 export default (state, action) => {
     const newState = JSON.parse(JSON.stringify(state));

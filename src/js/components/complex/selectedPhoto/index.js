@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import PhotoBig from 'so-simple/photoBig';
-import AuthorProfileLink from 'simple/authorProfileLinkBig';
-import PublicDate from 'simple/publicDateBig';
-import LikeData from 'simple/likeDataBig';
-import BtnGoBack from 'so-simple/button';
+import PhotoBig from '../../so-simple/photoBig';
+import AuthorProfileLink from '../../simple/authorProfileLinkBig';
+import PublicDate from '../../simple/publicDateBig';
+import LikeData from '../../simple/likeDataBig';
+import BtnGoBack from '../../so-simple/button';
 
 import './detailPhoto.css';
 

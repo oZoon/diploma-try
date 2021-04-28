@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { URL_USER } from 'lib/constants';
+import { URL_USER } from '../lib/constants.js';
 
-import Header from 'complex/header';
-import Home from 'complex/home';
-import SelectedPhoto from 'complex/selectedPhoto';
-import ShowBusy from 'so-simple/loading';
+import Header from '../components/complex/header';
+import Home from '../components/complex/home';
+import SelectedPhoto from '../components/complex/selectedPhoto';
+import ShowBusy from '../components/so-simple/loading';
 
 import './content.css';
 

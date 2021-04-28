@@ -1,5 +1,5 @@
-import records from "lib/records";
-import { VERSION } from 'lib/constants';
+import records from '../../lib/records.js';
+import { VERSION } from '../../lib/constants.js';
 
 let init = {
     user: {

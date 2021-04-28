@@ -4,7 +4,7 @@ import {
     LIST_PHOTOS_ERROR,
     PHOTO_LIKE,
     PHOTO_UNLIKE,
-} from "lib/constants";
+} from '../../lib/constants.js';
 
 export default (state, action) => {
     const newState = JSON.parse(JSON.stringify(state));

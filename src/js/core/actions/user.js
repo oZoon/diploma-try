@@ -1,14 +1,13 @@
-import Unsplash, { toJson } from "unsplash-js";
 import {
     LOG_IN_START,
     LOG_IN_SUCCESS,
     LOG_IN_ERROR,
     LOG_OUT,
-} from "lib/constants";
+} from '../../lib/constants.js';
 
 export const logIn = unsplash => {
     return (dispatch) => {
-        dispatch(start());
+        // dispatch(start());
         unsplash.authFirst();
     }
 }

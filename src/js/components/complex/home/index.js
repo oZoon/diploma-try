@@ -1,9 +1,9 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from 'react';
 
-import Column from 'simple/column';
-import BtnNextPhotos from 'so-simple/button';
-import BtnUp from 'so-simple/button';
-import BtnDown from 'so-simple/button';
+import Column from '../../simple/column';
+import BtnNextPhotos from '../../so-simple/button';
+import BtnUp from '../../so-simple/button';
+import BtnDown from '../../so-simple/button';
 import './home.css';
 
 // tripleFeed
@@ -13,8 +13,6 @@ import './home.css';
 // propsBtnDown
 
 export default props => {
-    // console.log(props);
-
     const elemTop = React.createRef();
     const elemBottom = React.createRef();
 

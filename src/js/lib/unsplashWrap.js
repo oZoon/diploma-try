@@ -1,7 +1,7 @@
-import Unsplash, { toJson } from "unsplash-js";
-import { URL_SITE, ACCESS_KEY, SECRET, LIST_PHOTOS_COUNT } from "lib/constants";
-import { userSuccess, userError } from 'actions/user';
-import { photosSuccess, photosError } from 'actions/photos'
+import Unsplash, { toJson } from 'unsplash-js';
+import { URL_SITE, ACCESS_KEY, SECRET, LIST_PHOTOS_COUNT } from './constants.js';
+import { userSuccess, userError } from '../core/actions/user.js';
+import { photosSuccess, photosError } from '../core/actions/photos.js';
 
 class UnsplashWrap {
     constructor() {

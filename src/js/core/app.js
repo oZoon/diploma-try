@@ -1,16 +1,16 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import unsplash from 'lib/unsplashWrap';
+import unsplash from '../lib/unsplashWrap.js';
 
-import Auth from 'simple/auth';
-import ShowBusy from 'so-simple/loading';
-import Content from 'containers/content';
+import Auth from '../components/simple/auth';
+import ShowBusy from '../components/so-simple/loading';
+import Content from '../containers/content.js';
 
-import separateProps from 'lib/separateProps';
-import mapStateToProps from 'lib/mapStateToProps';
-import mapDispatchToProps from 'lib/mapDispatchToProps';
+import separateProps from '../lib/separateProps.js';
+import mapStateToProps from '../lib/mapStateToProps.js';
+import mapDispatchToProps from '../lib/mapDispatchToProps.js';
 
 let App = (props) => {
     const newProps = separateProps(props, unsplash);

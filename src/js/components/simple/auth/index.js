@@ -1,6 +1,6 @@
-import React from "react";
-import Button from 'so-simple/button';
-import Text from 'so-simple/text';
+import React from 'react';
+import Button from '../../so-simple/button';
+import Text from '../../so-simple/text';
 import './auth.css';
 
 export default props => {

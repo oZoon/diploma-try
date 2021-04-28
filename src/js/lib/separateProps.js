@@ -1,7 +1,7 @@
 import React from 'react';
-import { separatePhotos, minHeightFeed, separatePhotoBig } from 'lib/utils';
-import ImgUp from 'images/up2.png';
-import ImgDown from 'images/down2.png';
+import { separatePhotos, minHeightFeed, separatePhotoBig } from './utils.js';
+import ImgUp from '../../images/up2.png';
+import ImgDown from '../../images/down2.png';
 
 export default (props, unsplash) => {
     const {

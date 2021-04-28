@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import moment from 'moment-timezone';
 
-import Text from 'so-simple/text';
+import Text from '../../so-simple/text';
 import './publicDateBig.css';
 
 export default props => {

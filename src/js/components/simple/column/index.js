@@ -1,5 +1,5 @@
-import React from "react";
-import Photo from 'simple/photo';
+import React from 'react';
+import Photo from '../photo';
 import './feed.css';
 
 export default props => {

@@ -5,8 +5,8 @@ import {
     PERIOD,
     PHOTO_LIKE,
     PHOTO_UNLIKE,
-} from "lib/constants";
-import { getUniquePhotos } from 'lib/utils';
+} from '../../lib/constants.js';
+import { getUniquePhotos } from '../../lib/utils.js';
 
 export const listPhotos = data => {
     const { photos, unsplash } = data;

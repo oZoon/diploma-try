@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { PHOTO_WIDTH, URL_USER } from 'lib/constants';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { PHOTO_WIDTH, URL_USER } from '../../../lib/constants.js';
 
-import AuthorProfileLink from 'simple/authorProfileLinkSmall';
-import LikeData from 'simple/likeDataSmall';
-import PublicDate from 'simple/publicDateSmall';
+import AuthorProfileLink from '../authorProfileLinkSmall';
+import LikeData from '../likeDataSmall';
+import PublicDate from '../publicDateSmall';
 
 import './photo.css';
 

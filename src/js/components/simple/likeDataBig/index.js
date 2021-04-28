@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import IconLike from 'so-simple/iconLike';
-import Text from 'so-simple/text';
-import ButtonLike from 'so-simple/button';
+import IconLike from '../../so-simple/iconLike';
+import Text from '../../so-simple/text';
+import ButtonLike from '../../so-simple/button';
 
 import './likeDataBig.css';
 

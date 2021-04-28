@@ -1,5 +1,5 @@
-import { logIn, continueLogIn, logOut } from 'actions/user';
-import { listPhotos, likePhoto, unLikePhoto } from 'actions/photos';
+import { logIn, continueLogIn, logOut } from '../core/actions/user.js';
+import { listPhotos, likePhoto, unLikePhoto } from '../core/actions/photos.js';
 
 export default dispatch => ({
     onLogIn: data => dispatch(logIn(data)),

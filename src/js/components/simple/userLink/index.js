@@ -1,6 +1,6 @@
-import React from "react";
-import { URL_USER } from "lib/constants";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { URL_USER } from '../../../lib/constants.js';
+import { Link } from 'react-router-dom';
 import './userLink.css';
 
 // style

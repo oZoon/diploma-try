@@ -1,4 +1,4 @@
-import { PHOTO_WIDTH, WINDOW_WIDTH, WINDOW_HEIGHT } from 'lib/constants';
+import { PHOTO_WIDTH, WINDOW_WIDTH, WINDOW_HEIGHT } from './constants.js';
 
 export const separatePhotos = list => {
     const result = [[], [], []];

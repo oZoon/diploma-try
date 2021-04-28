@@ -1,6 +1,6 @@
-import React from "react";
-import Image from 'so-simple/image';
-import Text from 'so-simple/text';
+import React from 'react';
+import Image from '../../so-simple/image';
+import Text from '../../so-simple/text';
 import './authorProfileLinkSmall.css';
 
 export default props => {
