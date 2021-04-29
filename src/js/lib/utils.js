@@ -106,7 +106,7 @@ const calcSizePhoto = dataPhotoBig => {
     return [realWidth, realHeight];
 }
 
-export const separatePhotoBig = (photos, history, onLikePhoto, onUnLikePhoto) => {
+export const separatePhotoBig = (photos, history, onLikePhoto, onUnLikePhoto, unsplash, token) => {
     const id = history.location.pathname.split('/').length == 3 ? history.location.pathname.split('/')[2] : null;
     const dataPhotoBig = id ? photos.list.find(item => item.id == id) : null;
 
@@ -136,10 +136,10 @@ export const separatePhotoBig = (photos, history, onLikePhoto, onUnLikePhoto) =>
         },
         likeDataBig: {
             count: dataPhotoBig.likes,
-            color: photos.likedPhotosId.includes(id) ? 'red' : 'black',
+            color: dataPhotoBig.liked_by_user ? 'red' : 'black',
             propsLike: {
-                onClick: photos.likedPhotosId.includes(id) ? onUnLikePhoto : onLikePhoto,
-                data: { id },
+                onClick: onLikePhoto,
+                data: { id, unsplash, token, action: !dataPhotoBig.liked_by_user },
                 className: 'button-like',
             }
         },

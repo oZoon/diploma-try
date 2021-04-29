@@ -24,7 +24,7 @@ export default props => {
                 <span className="opacity-layer-card">
                     <LikeData
                         count={props.likes}
-                        color={props.likedPhotosId.includes(props.id) ? 'red' : 'black'}
+                        color={props.liked_by_user ? 'red' : 'black'}
                     />
                     <PublicDate date={props.updated_at} />
                 </span>

@@ -1,7 +1,11 @@
 import Unsplash, { toJson } from 'unsplash-js';
 import { URL_SITE, ACCESS_KEY, SECRET, LIST_PHOTOS_COUNT } from './constants.js';
 import { userSuccess, userError } from '../core/actions/user.js';
-import { photosSuccess, photosError } from '../core/actions/photos.js';
+import {
+    photosSuccess,
+    photosError,
+    likePhotoResult,
+} from '../core/actions/photos.js';
 
 class UnsplashWrap {
     constructor() {
@@ -70,21 +74,17 @@ class UnsplashWrap {
             })
 
     }
-    async likePhoto(photoId) {
-        this.unsplash.photos
-            .likePhoto(photoId)
-            .then(toJson)
+    async likePhoto(photoId, dispatch, token, action) {
+        this.setToken(token);
+        const request = action ?
+            this.unsplash.photos.likePhoto(photoId) :
+            this.unsplash.photos.unlikePhoto(photoId);
+        request.then(toJson)
             .then(json => {
-                console.log(['likePhoto', json]);
+                dispatch(likePhotoResult(photoId, action));
             })
-    }
-
-    async unLikePhoto(photoId) {
-        this.unsplash.photos
-            .unlikePhoto(photoId)
-            .then(toJson)
-            .then(json => {
-                console.log(['unlikePhoto', json]);
+            .catch(err => {
+                dispatch(photosError(err));
             })
     }
 

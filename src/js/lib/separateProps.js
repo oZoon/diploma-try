@@ -16,7 +16,7 @@ export default (props, unsplash) => {
         onUnLikePhoto,
     } = props;
 
-    const authSecond = !user.isLogged && user.state && history.location.search.substr(0, 6) == '?code=';
+    const authSecond = !user.isLogged && history.location.search.substr(0, 6) == '?code=';
 
     const propsAuth = {
         propsText: {
@@ -41,7 +41,7 @@ export default (props, unsplash) => {
     }
     const tripleFeed = separatePhotos(photos.list);
     const minHeight = minHeightFeed(tripleFeed);
-    const selectedPhoto = separatePhotoBig(photos, history, onLikePhoto, onUnLikePhoto);
+    const selectedPhoto = separatePhotoBig(photos, history, onLikePhoto, onUnLikePhoto, unsplash, user.token);
 
     const propsContent = {
         header: {

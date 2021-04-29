@@ -4,7 +4,6 @@ import {
     LIST_PHOTOS_ERROR,
     PERIOD,
     PHOTO_LIKE,
-    PHOTO_UNLIKE,
 } from '../../lib/constants.js';
 import { getUniquePhotos } from '../../lib/utils.js';
 
@@ -47,17 +46,17 @@ export const photosError = err => {
     }
 }
 
-export const likePhoto = ({id}) => {
-    console.log(id);
+export const likePhoto = data => {
+    const { id, unsplash, token, action } = data;
+    return dispatch => {
+        dispatch(start());
+        unsplash.likePhoto(id, dispatch, token, action);
+    }
+}
+export const likePhotoResult = (id, result) => {
     return {
         type: PHOTO_LIKE,
         id,
-    }
-}
-
-export const unLikePhoto = ({ id }) => {
-    return {
-        type: PHOTO_UNLIKE,
-        id,
+        result,
     }
 }

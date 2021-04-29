@@ -30,7 +30,6 @@ export const LIST_PHOTOS_ERROR = 'LIST_PHOTOS_ERROR';
 export const LIST_PHOTOS_COUNT = 10;
 
 export const PHOTO_LIKE = 'PHOTO_LIKE';
-export const PHOTO_UNLIKE = 'PHOTO_UNLIKE';
 
 export const WINDOW_WIDTH = document.documentElement.clientWidth - 32;
 export const WINDOW_HEIGHT = document.documentElement.clientHeight - 86;
