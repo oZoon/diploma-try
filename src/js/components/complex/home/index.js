@@ -17,7 +17,9 @@ export default props => {
     const elemBottom = React.createRef();
 
     const useWindowHeight = () => {
-        const [windowHeight, setWindowHeight] = useState(document.documentElement.clientHeight - 58);
+        const [windowHeight, setWindowHeight] = useState(
+            document.documentElement.clientHeight - 58,
+        );
         useLayoutEffect(() => {
             const updateHeight = () => {
                 setWindowHeight(document.documentElement.clientHeight - 58);
@@ -31,40 +33,39 @@ export default props => {
 
     return (
         <>
-            <span ref={elemTop} style={{ 'height': '1px' }} />
-            <div className="content-base">
-                {
-                    props.tripleFeed.map((item, index) => {
-                        return (
-                            <Column
-                                photosList={item}
-                                likedPhotosId={props.likedPhotosId}
-                                key={index} />
-                        );
-                    })
-                }
+            <span ref={elemTop} style={{ height: '1px' }} />
+            <div className='content-base'>
+                {props.tripleFeed.map((item, index) => {
+                    return (
+                        <Column
+                            photosList={item}
+                            likedPhotosId={props.likedPhotosId}
+                            key={index}
+                        />
+                    );
+                })}
             </div>
             <span ref={elemBottom} />
             <BtnNextPhotos {...props.propsNextPhotos} />
             <BtnUp
                 {...props.propsBtnUp}
                 onClick={() => {
-                    elemTop.current.scrollIntoView({ behavior: "smooth" });
+                    elemTop.current.scrollIntoView({ behavior: 'smooth' });
                 }}
                 styleComponent={{
-                    'left': `${document.documentElement.clientWidth / 2 + 490}px`,
-                    'display': `${props.propsNavVisible}`,
+                    left: `${document.documentElement.clientWidth / 2 + 490}px`,
+                    display: `${props.propsNavVisible}`,
                 }}
             />
             <BtnDown
                 {...props.propsBtnDown}
                 onClick={() => {
-                    elemBottom.current.scrollIntoView({ behavior: "smooth" });
+                    elemBottom.current.scrollIntoView({ behavior: 'smooth' });
                 }}
                 styleComponent={{
-                    'left': `${document.documentElement.clientWidth / 2 + 490}px`,
-                    'top': `${useWindowHeight()}px`,
-                    'display': `${props.propsNavVisible}`,
+                    left: `${document.documentElement.clientWidth / 2 + 490}px`,
+                    top: `${useWindowHeight()}px`,
+                    display: `${props.propsNavVisible}`,
                 }}
             />
         </>

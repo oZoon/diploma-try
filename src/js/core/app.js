@@ -12,20 +12,24 @@ import separateProps from '../lib/separateProps.js';
 import mapStateToProps from '../lib/mapStateToProps.js';
 import mapDispatchToProps from '../lib/mapDispatchToProps.js';
 
-let App = (props) => {
+let App = props => {
     const newProps = separateProps(props, unsplash);
+    console.log(newProps);
 
     // второй шаг авторизации
     newProps.authSecond ? newProps.doContinueLogIn(newProps.propsLogIn) : null;
 
     return (
         <>
-            {newProps.showAuth ?
-                <Auth {...newProps.propsAuth} /> :
-                newProps.isBusy ?
-                    <ShowBusy {...newProps.showBusy} /> :
-                    <Content {...newProps.propsContent} />
-            }
+            {newProps.showAuth ? (
+                newProps.isBusy ? (
+                    <ShowBusy {...newProps.showBusy} />
+                ) : (
+                    <Auth {...newProps.propsAuth} />
+                )
+            ) : (
+                <Content {...newProps.propsContent} />
+            )}
         </>
     );
 };

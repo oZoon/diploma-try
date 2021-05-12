@@ -9,18 +9,14 @@ export default props => {
     // name
     return (
         <a
-            className="link-unsplash"
+            className='link-unsplash'
             href={`https://unsplash.com/@${props.username}`}
-            target="_blank"
+            target='_blank'
         >
             <Image src={props.imageSrc} />
-            <Text className="link-container">
-                <Text className="link-name">
-                    {props.name}
-                </Text>
-                <Text className="link-username">
-                    @{props.username}
-                </Text>
+            <Text className='link-container'>
+                <Text className='link-name'>{props.name}</Text>
+                <Text className='link-username'>@{props.username}</Text>
             </Text>
         </a>
     );

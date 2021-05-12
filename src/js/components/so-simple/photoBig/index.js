@@ -5,8 +5,11 @@ export default props => {
     return (
         <img
             src={props.src}
-            className="big-image"
-            style={{ 'width': `${props.size[0]}px`, 'height': `${props.size[1]}px` }}
+            className='big-image'
+            style={{
+                width: `${props.size[0]}px`,
+                height: `${props.size[1]}px`,
+            }}
         />
     );
 };

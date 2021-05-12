@@ -16,11 +16,13 @@ export default (props, unsplash) => {
         onUnLikePhoto,
     } = props;
 
-    const authSecond = !user.isLogged && history.location.search.substr(0, 6) == '?code=';
+    const authSecond =
+        !user.isLogged && history.location.search.slice(0, 6) == '?code=';
 
     const propsAuth = {
         propsText: {
-            children: 'Для входа требуется аккаунт unsplash.com или facebook.com',
+            children:
+                'Для входа требуется аккаунт unsplash.com или facebook.com',
         },
         propsButton: {
             onClick: onLogIn,
@@ -41,7 +43,14 @@ export default (props, unsplash) => {
     };
     const tripleFeed = separatePhotos(photos.list);
     const minHeight = minHeightFeed(tripleFeed);
-    const selectedPhoto = separatePhotoBig(photos, history, onLikePhoto, onUnLikePhoto, unsplash, user.token);
+    const selectedPhoto = separatePhotoBig(
+        photos,
+        history,
+        onLikePhoto,
+        onUnLikePhoto,
+        unsplash,
+        user.token,
+    );
 
     const propsContent = {
         header: {
@@ -73,23 +82,29 @@ export default (props, unsplash) => {
         home: {
             tripleFeed,
             propsNextPhotos: {
-                className: photos.list.length ? 'button-next-photos' : 'button-first-photos',
+                className:
+                    photos.list.length > 0
+                        ? 'button-next-photos'
+                        : 'button-first-photos',
                 onClick: onListPhotos,
                 data: {
                     photos,
                     unsplash,
                 },
-                children: photos.list.length ? 'загрузить еще' : 'загрузить ленту фотографий',
+                children:
+                    photos.list.length > 0
+                        ? 'загрузить еще'
+                        : 'загрузить ленту фотографий',
             },
             likedPhotosId: photos.likedPhotosId,
             propsBtnUp: {
                 className: 'button-move-top',
-                children: <img src={ImgUp} className="arrow" />,
+                children: <img src={ImgUp} className='arrow' />,
             },
-            propsNavVisible: photos.list.length ? 'block' : 'none',
+            propsNavVisible: photos.list.length > 0 ? 'block' : 'none',
             propsBtnDown: {
                 className: 'button-move-bottom',
-                children: <img src={ImgDown} className="arrow" />,
+                children: <img src={ImgDown} className='arrow' />,
             },
         },
         isBusy: photos.state,
@@ -98,12 +113,8 @@ export default (props, unsplash) => {
             className: 'loading-small',
         },
         selectedPhoto,
-        collections: {
-
-        },
-        liked: {
-
-        },
+        collections: {},
+        liked: {},
     };
 
     return {

@@ -14,17 +14,18 @@ const start = () => {
 };
 export const listPhotos = data => {
     const { photos, unsplash } = data;
-    return (dispatch) => {
+    return dispatch => {
         dispatch(start());
         unsplash.getList(photos, dispatch);
     };
 };
 
 export const photosSuccess = (json, photos) => {
-    const time = +new Date();
-    const [page, list] = photos.time + PERIOD < time ?
-        [photos.page + 1, getUniquePhotos(photos.list, json)] :
-        [1, json];
+    const time = Date.now();
+    const [page, list] =
+        photos.time + PERIOD < time
+            ? [photos.page + 1, getUniquePhotos(photos.list, json)]
+            : [1, json];
     const result = {
         state: false,
         page,

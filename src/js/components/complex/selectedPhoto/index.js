@@ -10,7 +10,7 @@ import './detailPhoto.css';
 
 export default props => {
     return (
-        <div className="content-detail-photo">
+        <div className='content-detail-photo'>
             <PhotoBig {...props.photoBig} />
             <AuthorProfileLink {...props.authorProfileLinkBig} />
             <PublicDate {...props.publicDateBig} />

@@ -7,8 +7,8 @@ import './header.css';
 
 export default props => {
     return (
-        <nav className="header">
-            <div className="container">
+        <nav className='header'>
+            <div className='container'>
                 <UserLink {...props.propsUserName} />
                 <Divider />
                 <UserLink {...props.propsUserPhotos} />

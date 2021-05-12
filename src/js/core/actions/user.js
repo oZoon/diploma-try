@@ -6,15 +6,15 @@ import {
 } from '../../lib/constants.js';
 
 export const logIn = unsplash => {
-    return (dispatch) => {
+    return dispatch => {
         // dispatch(start());
         unsplash.authFirst();
     };
 };
 
 export const continueLogIn = ({ history, unsplash }) => {
-    return (dispatch) => {
-        const code = history.location.search.substr(6);
+    return dispatch => {
+        const code = history.location.search.slice(6);
         unsplash.authSecond(code, dispatch, history);
     };
 };
@@ -24,7 +24,6 @@ export const logOut = history => {
     return {
         type: LOG_OUT,
     };
-
 };
 
 const start = () => {

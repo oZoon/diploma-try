@@ -1,7 +1,7 @@
 import React from 'react';
 import './button.css';
 
-export default (props) => {
+export default props => {
     const data = props.data ? props.data : null;
     return (
         <button
@@ -11,5 +11,6 @@ export default (props) => {
             ref={props.propsRef ? props.propsRef : null}
         >
             {props.children}
-        </button>);
+        </button>
+    );
 };

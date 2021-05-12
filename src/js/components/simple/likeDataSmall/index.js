@@ -7,7 +7,7 @@ import './likeDataSmall.css';
 
 export default props => {
     return (
-        <Text className="like">
+        <Text className='like'>
             <IconLike color={props.color} />
             {props.count}
         </Text>

@@ -11,11 +11,12 @@ import './content.css';
 
 export default props => {
     return (
-        <div className="content">
+        <div className='content'>
             <Header {...props.header} />
             <Switch>
                 <Route
-                    exact path={URL_USER.home}
+                    exact
+                    path={URL_USER.home}
                     render={() => <Home {...props.home} />}
                 />
                 <Route

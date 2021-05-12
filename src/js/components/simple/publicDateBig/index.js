@@ -6,8 +6,9 @@ import './publicDateBig.css';
 
 export default props => {
     return (
-        <Text className="date-big">
-            {moment(props.date).tz("Europe/Moscow").format('DD.MM.YYYY HH:mm')} MSK
+        <Text className='date-big'>
+            {moment(props.date).tz('Europe/Moscow').format('DD.MM.YYYY HH:mm')}{' '}
+            MSK
         </Text>
     );
 };

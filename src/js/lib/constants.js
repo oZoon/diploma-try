@@ -1,9 +1,10 @@
 import packageJson from '../../../package.json';
+
 export const VERSION = packageJson.version;
 
 let url_site = 'http://localhost:8080';
 const hostname = window && window.location && window.location.hostname;
-if(hostname != 'localhost') url_site = `http://${hostname}`;
+if (hostname != 'localhost') url_site = `http://${hostname}`;
 export const URL_SITE = url_site;
 
 export const TEST_MODE = true;

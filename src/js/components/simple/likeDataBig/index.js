@@ -9,7 +9,7 @@ import './likeDataBig.css';
 export default props => {
     return (
         <ButtonLike {...props.propsLike}>
-            <Text className={`like-big-${props.color}`} >
+            <Text className={`like-big-${props.color}`}>
                 <IconLike color={props.color} />
                 {props.count}
             </Text>

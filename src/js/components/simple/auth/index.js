@@ -6,9 +6,9 @@ import './auth.css';
 export default props => {
     // console.log(s);
     return (
-        <div className="auth">
-            <div className="auth-modal">
-                <div className="auth-container">
+        <div className='auth'>
+            <div className='auth-modal'>
+                <div className='auth-container'>
                     <Text {...props.propsText} />
                     <Button {...props.propsButton} />
                 </div>

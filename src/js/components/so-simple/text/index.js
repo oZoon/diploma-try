@@ -4,9 +4,5 @@ import './text.css';
 export default props => {
     // content
     // children
-    return (
-        <span className={props.className || 'text'}>
-            {props.children}
-        </span>
-    );
+    return <span className={props.className || 'text'}>{props.children}</span>;
 };

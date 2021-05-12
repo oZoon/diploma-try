@@ -10,18 +10,16 @@ import './photo.css';
 
 export default props => {
     return (
-        <div className="content-card">
-            <Link
-                to={`${URL_USER.photo}/${props.id}`}
-            >
+        <div className='content-card'>
+            <Link to={`${URL_USER.photo}/${props.id}`}>
                 <img
                     src={props.urls.small}
-                    className="image-card"
-                    height={PHOTO_WIDTH * props.height / props.width}
+                    className='image-card'
+                    height={(PHOTO_WIDTH * props.height) / props.width}
                     width={PHOTO_WIDTH}
-                    style={{ 'backgroundColor': `${props.color}` }}
+                    style={{ backgroundColor: `${props.color}` }}
                 />
-                <span className="opacity-layer-card">
+                <span className='opacity-layer-card'>
                     <LikeData
                         count={props.likes}
                         color={props.liked_by_user ? 'red' : 'black'}
