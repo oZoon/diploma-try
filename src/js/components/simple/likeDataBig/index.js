@@ -14,5 +14,5 @@ export default props => {
                 {props.count}
             </Text>
         </ButtonLike>
-    )
-}
+    );
+};

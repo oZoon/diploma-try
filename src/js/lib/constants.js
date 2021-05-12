@@ -16,7 +16,7 @@ export const URL_USER = {
     photo: '/photo',
     collections: '/collections',
     liked: '/liked',
-}
+};
 export const PHOTO_WIDTH = 300;
 
 export const LOG_IN_START = 'LOG_IN_START';

@@ -5,5 +5,5 @@ import './loading.css';
 
 export default props => {
     const loading = props.size == 'small' ? LoadingSmall : LoadingBig;
-    return <span className="loading-wrap"><img src={loading} className={props.className} /></span>
-}
+    return <span className="loading-wrap"><img src={loading} className={props.className} /></span>;
+};

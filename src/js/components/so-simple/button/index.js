@@ -11,5 +11,5 @@ export default (props) => {
             ref={props.propsRef ? props.propsRef : null}
         >
             {props.children}
-        </button>)
+        </button>);
 };

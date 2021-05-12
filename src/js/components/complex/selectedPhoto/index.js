@@ -17,5 +17,5 @@ export default props => {
             <LikeData {...props.likeDataBig} />
             <BtnGoBack {...props.btnGoBack} />
         </div>
-    )
-}
+    );
+};

@@ -25,5 +25,5 @@ export default props => {
             </Switch>
             {props.isBusy ? <ShowBusy {...props.showBusy} /> : null}
         </div>
-    )
+    );
 };

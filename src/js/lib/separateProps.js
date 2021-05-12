@@ -38,7 +38,7 @@ export default (props, unsplash) => {
     const propsLogIn = {
         history,
         unsplash,
-    }
+    };
     const tripleFeed = separatePhotos(photos.list);
     const minHeight = minHeightFeed(tripleFeed);
     const selectedPhoto = separatePhotoBig(photos, history, onLikePhoto, onUnLikePhoto, unsplash, user.token);
@@ -104,7 +104,7 @@ export default (props, unsplash) => {
         liked: {
 
         },
-    }
+    };
 
     return {
         propsAuth,
@@ -115,5 +115,5 @@ export default (props, unsplash) => {
         doContinueLogIn,
         propsLogIn,
         authSecond,
-    }
-}
+    };
+};

@@ -21,13 +21,13 @@ export default props => {
         useLayoutEffect(() => {
             const updateHeight = () => {
                 setWindowHeight(document.documentElement.clientHeight - 58);
-            }
+            };
             window.addEventListener('resize', updateHeight);
             updateHeight();
             return () => window.removeEventListener('resize', updateHeight);
         }, []);
         return windowHeight;
-    }
+    };
 
     return (
         <>
@@ -40,7 +40,7 @@ export default props => {
                                 photosList={item}
                                 likedPhotosId={props.likedPhotosId}
                                 key={index} />
-                        )
+                        );
                     })
                 }
             </div>
@@ -68,5 +68,5 @@ export default props => {
                 }}
             />
         </>
-    )
-}
+    );
+};

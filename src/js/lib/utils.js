@@ -1,31 +1,6 @@
 import { PHOTO_WIDTH, WINDOW_WIDTH, WINDOW_HEIGHT } from './constants.js';
 
-export const separatePhotos = list => {
-    const result = [[], [], []];
-    if (list) {
-        list.forEach(item => {
-            const index = calcMinHeightIndex(result);
-            result[index] = [].concat(result[index], item)
-        });
-    }
-    return result;
-}
-
-const calcMinHeightIndex = tripleArray => {
-    const array = calcAllHeights(tripleArray);
-    return array.findIndex(e => e == calcMinHeight(array));
-}
-
 const calcMinHeight = tripleArray => Math.min(tripleArray[0], tripleArray[1], tripleArray[2]);
-
-const calcMaxHeight = tripleArray => Math.max(tripleArray[0], tripleArray[1], tripleArray[2]);
-
-export const calcMax = tripleArray => {
-    const array = calcAllHeights(tripleArray);
-    const maxHeight = calcMaxHeight(array);
-    const count = tripleArray[array.findIndex(e => e == maxHeight)].length;
-    return parseInt(maxHeight + count * 301 / 10);
-}
 
 const calcAllHeights = tripleArray => {
     const array = [0, 0, 0];
@@ -38,7 +13,33 @@ const calcAllHeights = tripleArray => {
         });
     }
     return array;
-}
+};
+
+const calcMinHeightIndex = tripleArray => {
+    const array = calcAllHeights(tripleArray);
+    return array.findIndex(e => e == calcMinHeight(array));
+};
+
+export const separatePhotos = list => {
+    const result = [[], [], []];
+    if (list) {
+        list.forEach(item => {
+            const index = calcMinHeightIndex(result);
+            result[index] = [].concat(result[index], item);
+        });
+    }
+    return result;
+};
+
+const calcMaxHeight = tripleArray => Math.max(tripleArray[0], tripleArray[1], tripleArray[2]);
+
+export const calcMax = tripleArray => {
+    const array = calcAllHeights(tripleArray);
+    const maxHeight = calcMaxHeight(array);
+    const count = tripleArray[array.findIndex(e => e == maxHeight)].length;
+    return parseInt(maxHeight + count * 301 / 10);
+};
+
 
 export const minHeightFeed = tripleArray => calcMinHeight(calcAllHeights(tripleArray));
 
@@ -49,10 +50,10 @@ export const getUniquePhotos = (oldList, addingList) => {
     } else {
         const old = JSON.parse(JSON.stringify(oldList));
         const adding = JSON.parse(JSON.stringify(addingList));
-        adding.forEach(item => !old.some(item2 => item2.id == item.id) ? old.push(item) : null)
+        adding.forEach(item => !old.some(item2 => item2.id == item.id) ? old.push(item) : null);
         return old;
     }
-}
+};
 
 
 const calcSizePhoto = dataPhotoBig => {
@@ -104,7 +105,7 @@ const calcSizePhoto = dataPhotoBig => {
         }
     }
     return [realWidth, realHeight];
-}
+};
 
 export const separatePhotoBig = (photos, history, onLikePhoto, onUnLikePhoto, unsplash, token) => {
     const id = history.location.pathname.split('/').length == 3 ? history.location.pathname.split('/')[2] : null;
@@ -161,4 +162,4 @@ export const separatePhotoBig = (photos, history, onLikePhoto, onUnLikePhoto, un
             children: 'вернуться к ленте фотографий',
         },
     } : undefined;
-}
+};

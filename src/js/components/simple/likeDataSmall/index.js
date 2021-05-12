@@ -11,5 +11,5 @@ export default props => {
             <IconLike color={props.color} />
             {props.count}
         </Text>
-    )
-}
+    );
+};

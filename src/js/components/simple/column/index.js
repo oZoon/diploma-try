@@ -7,14 +7,14 @@ export default props => {
         <div className="content-column">
             {
                 props.photosList.map(item => {
-                return (
-                    <Photo
-                        key={item.id}
-                        {...item}
-                        likedPhotosId={props.likedPhotosId}
-                    />
-                )
-            })}
+                    return (
+                        <Photo
+                            key={item.id}
+                            {...item}
+                            likedPhotosId={props.likedPhotosId}
+                        />
+                    );
+                })}
         </div>
-    )
-}
+    );
+};

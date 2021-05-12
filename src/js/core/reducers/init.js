@@ -22,7 +22,7 @@ let init = {
     },
 };
 
-let initStore = records.getRecord(`diplomaSimple${VERSION}`);
+const initStore = records.getRecord(`diplomaSimple${VERSION}`);
 init = initStore !== null ? initStore : init;
 records.setRecord(`diplomaSimple${VERSION}`, init);
 

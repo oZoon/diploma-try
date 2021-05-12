@@ -7,18 +7,18 @@ import {
 } from '../../lib/constants.js';
 import { getUniquePhotos } from '../../lib/utils.js';
 
+const start = () => {
+    return {
+        type: LIST_PHOTOS_START,
+    };
+};
 export const listPhotos = data => {
     const { photos, unsplash } = data;
     return (dispatch) => {
         dispatch(start());
         unsplash.getList(photos, dispatch);
-    }
-}
-const start = () => {
-    return {
-        type: LIST_PHOTOS_START,
-    }
-}
+    };
+};
 
 export const photosSuccess = (json, photos) => {
     const time = +new Date();
@@ -33,30 +33,30 @@ export const photosSuccess = (json, photos) => {
         error: photos.error,
         likedPhotosId: photos.likedPhotosId,
         jsonLike: photos.jsonLike,
-    }
+    };
     return {
         type: LIST_PHOTOS_SUCCESS,
         result,
-    }
-}
+    };
+};
 export const photosError = err => {
     return {
         type: LIST_PHOTOS_ERROR,
         err,
-    }
-}
+    };
+};
 
 export const likePhoto = data => {
     const { id, unsplash, token, action } = data;
     return dispatch => {
         dispatch(start());
         unsplash.likePhoto(id, dispatch, token, action);
-    }
-}
+    };
+};
 export const likePhotoResult = (id, result) => {
     return {
         type: PHOTO_LIKE,
         id,
         result,
-    }
-}
+    };
+};

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import UserLink from '../../simple/userLink';
-import Divider from '../../so-simple/divider'
+import Divider from '../../so-simple/divider';
 import LogOut from '../../so-simple/logOut';
 import './header.css';
 

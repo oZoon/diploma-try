@@ -34,7 +34,7 @@ class UnsplashWrap {
             .then(toJson)
             .then(async (json) => {
                 if (json.access_token) {
-                    const token = json.access_token
+                    const token = json.access_token;
                     this.unsplash.auth.setBearerToken(json.access_token);
                     await this.unsplash.currentUser
                         .profile()
@@ -45,20 +45,20 @@ class UnsplashWrap {
                                 token,
                                 name: json.first_name,
                                 json,
-                            }
+                            };
                             dispatch(userSuccess(result));
                             history.push('/', 'logInSuccess');
                         })
                         .catch((err) => {
                             dispatch(userError(err));
-                        })
+                        });
                 } else {
                     dispatch(userError(json));
                 }
             })
             .catch((err) => {
                 dispatch(userError(err));
-            })
+            });
     }
 
 
@@ -71,7 +71,7 @@ class UnsplashWrap {
             })
             .catch(err => {
                 dispatch(photosError(err));
-            })
+            });
 
     }
     async likePhoto(photoId, dispatch, token, action) {
@@ -85,7 +85,7 @@ class UnsplashWrap {
             })
             .catch(err => {
                 dispatch(photosError(err));
-            })
+            });
     }
 
 }

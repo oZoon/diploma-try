@@ -7,4 +7,4 @@ export default (state = init, action) => {
         user: user(state.user, action),
         photos: photos(state.photos, action),
     };
-}
+};

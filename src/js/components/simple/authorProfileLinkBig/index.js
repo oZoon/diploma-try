@@ -13,5 +13,5 @@ export default props => {
             <Text {...props.propsName} />
             <Text {...props.propsUsername} />
         </a>
-    )
-}
+    );
+};

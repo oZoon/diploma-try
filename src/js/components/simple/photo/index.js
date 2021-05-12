@@ -35,5 +35,5 @@ export default props => {
                 name={props.user.name}
             />
         </div>
-    )
-}
+    );
+};

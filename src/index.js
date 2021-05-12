@@ -18,7 +18,7 @@ const store = createStore(reducers, /* preloadedState, */ composeEnhancers(apply
 
 const update = () => {
     records.setRecord(`diplomaSimple${VERSION}`, store.getState());
-}
+};
 store.subscribe(update);
 
 ReactDOM.render(
