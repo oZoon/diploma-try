@@ -3,7 +3,8 @@ import {
     LOG_IN_SUCCESS,
     LOG_IN_ERROR,
     LOG_OUT,
-} from '../../lib/constants.js';
+    CHANGE_LIKE,
+} from '../../lib/constants';
 
 export default (state, action) => {
     const newState = JSON.parse(JSON.stringify(state));
@@ -33,6 +34,10 @@ export default (state, action) => {
             newState.token = '';
             newState.name = '';
             newState.json = {};
+            return newState;
+        case CHANGE_LIKE:
+            newState.json.total_likes =
+                newState.json.total_likes + action.value;
             return newState;
         default:
             return newState;

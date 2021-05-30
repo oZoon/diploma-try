@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { URL_USER } from '../lib/constants.js';
+import { URL_USER } from '../lib/constants';
 
 import Header from '../components/complex/header';
 import Home from '../components/complex/home';

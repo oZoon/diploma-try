@@ -24,6 +24,7 @@ export const LOG_IN_START = 'LOG_IN_START';
 export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
 export const LOG_IN_ERROR = 'LOG_IN_ERROR';
 export const LOG_OUT = 'LOG_OUT';
+export const CHANGE_LIKE = 'CHANGE_LIKE';
 
 export const LIST_PHOTOS_START = 'LIST_PHOTOS_START';
 export const LIST_PHOTOS_SUCCESS = 'LIST_PHOTOS_SUCCESS';

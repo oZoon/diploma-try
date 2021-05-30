@@ -2,19 +2,18 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import unsplash from '../lib/unsplashWrap.js';
+import unsplash from '../lib/unsplashWrap';
 
 import Auth from '../components/simple/auth';
 import ShowBusy from '../components/so-simple/loading';
-import Content from '../containers/content.js';
+import Content from '../containers/content';
 
-import separateProps from '../lib/separateProps.js';
-import mapStateToProps from '../lib/mapStateToProps.js';
-import mapDispatchToProps from '../lib/mapDispatchToProps.js';
+import separateProps from '../lib/separateProps';
+import mapStateToProps from '../lib/mapStateToProps';
+import mapDispatchToProps from '../lib/mapDispatchToProps';
 
 let App = props => {
     const newProps = separateProps(props, unsplash);
-    console.log(newProps);
 
     // второй шаг авторизации
     newProps.authSecond ? newProps.doContinueLogIn(newProps.propsLogIn) : null;

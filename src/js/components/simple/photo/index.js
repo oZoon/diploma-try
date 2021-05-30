@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PHOTO_WIDTH, URL_USER } from '../../../lib/constants.js';
+import { PHOTO_WIDTH, URL_USER } from '../../../lib/constants';
 
 import AuthorProfileLink from '../authorProfileLinkSmall';
 import LikeData from '../likeDataSmall';

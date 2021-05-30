@@ -1,16 +1,12 @@
 import Unsplash, { toJson } from 'unsplash-js';
-import {
-    URL_SITE,
-    ACCESS_KEY,
-    SECRET,
-    LIST_PHOTOS_COUNT,
-} from './constants.js';
-import { userSuccess, userError } from '../core/actions/user.js';
+import { URL_SITE, ACCESS_KEY, SECRET, LIST_PHOTOS_COUNT } from './constants';
+import { userSuccess, userError } from '../core/actions/user';
 import {
     photosSuccess,
     photosError,
     likePhotoResult,
-} from '../core/actions/photos.js';
+} from '../core/actions/photos';
+import { changeUserLike } from '../core/actions/user';
 
 class UnsplashWrap {
     constructor() {
@@ -88,8 +84,9 @@ class UnsplashWrap {
             : this.unsplash.photos.unlikePhoto(photoId);
         request
             .then(toJson)
-            .then(json => {
-                dispatch(likePhotoResult(photoId, action));
+            .then(() => {
+                dispatch(changeUserLike(action == true ? 1 : -1));
+                dispatch(likePhotoResult({ photoId, action }));
             })
             .catch(error => {
                 dispatch(photosError(error));

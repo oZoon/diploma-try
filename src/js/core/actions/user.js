@@ -3,7 +3,8 @@ import {
     LOG_IN_SUCCESS,
     LOG_IN_ERROR,
     LOG_OUT,
-} from '../../lib/constants.js';
+    CHANGE_LIKE,
+} from '../../lib/constants';
 
 export const logIn = unsplash => {
     return dispatch => {
@@ -43,5 +44,12 @@ export const userError = err => {
     return {
         type: LOG_IN_ERROR,
         err,
+    };
+};
+
+export const changeUserLike = value => {
+    return {
+        type: CHANGE_LIKE,
+        value,
     };
 };

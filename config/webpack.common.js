@@ -38,7 +38,7 @@ module.exports = {
                         options: {
                             sourceMap: true,
                             importLoaders: 1,
-                        }
+                        },
                     },
                 ],
             },
@@ -47,7 +47,7 @@ module.exports = {
             { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
 
             // fonts and SVG
-              {test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline'},
+            { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
         ],
     },
-}
+};

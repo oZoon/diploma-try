@@ -1,5 +1,5 @@
 import React from 'react';
-import { separatePhotos, minHeightFeed, separatePhotoBig } from './utils.js';
+import { separatePhotos, minHeightFeed, separatePhotoBig } from './utils';
 import ImgUp from '../../images/up2.png';
 import ImgDown from '../../images/down2.png';
 

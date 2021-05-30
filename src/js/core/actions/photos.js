@@ -4,8 +4,8 @@ import {
     LIST_PHOTOS_ERROR,
     PERIOD,
     PHOTO_LIKE,
-} from '../../lib/constants.js';
-import { getUniquePhotos } from '../../lib/utils.js';
+} from '../../lib/constants';
+import { getUniquePhotos } from '../../lib/utils';
 
 const start = () => {
     return {
@@ -21,19 +21,13 @@ export const listPhotos = data => {
 };
 
 export const photosSuccess = (json, photos) => {
-    const time = Date.now();
-    const [page, list] =
-        photos.time + PERIOD < time
-            ? [photos.page + 1, getUniquePhotos(photos.list, json)]
-            : [1, json];
+    console.log(photos);
+    const [page, list] = [photos.page + 1, getUniquePhotos(photos.list, json)];
     const result = {
         state: false,
         page,
-        time,
         list,
         error: photos.error,
-        likedPhotosId: photos.likedPhotosId,
-        jsonLike: photos.jsonLike,
     };
     return {
         type: LIST_PHOTOS_SUCCESS,
@@ -54,10 +48,10 @@ export const likePhoto = data => {
         unsplash.likePhoto(id, dispatch, token, action);
     };
 };
-export const likePhotoResult = (id, result) => {
+export const likePhotoResult = ({ photoId, action }) => {
     return {
         type: PHOTO_LIKE,
-        id,
-        result,
+        photoId,
+        action,
     };
 };

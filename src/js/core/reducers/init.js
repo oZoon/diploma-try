@@ -1,5 +1,5 @@
-import records from '../../lib/records.js';
-import { VERSION } from '../../lib/constants.js';
+import records from '../../lib/records';
+import { VERSION } from '../../lib/constants';
 
 let init = {
     user: {
@@ -14,11 +14,11 @@ let init = {
     photos: {
         state: false,
         page: 0,
-        time: 0,
+        // time: 0,
         list: [],
         error: {},
-        likedPhotosId: [],
-        jsonLike: {},
+        // likedPhotosId: [],
+        // jsonLike: {},
     },
 };
 
