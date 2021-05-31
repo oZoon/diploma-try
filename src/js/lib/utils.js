@@ -104,9 +104,9 @@ const calcSizePhoto = dataPhotoBig => {
 
 export const separatePhotoBig = (
     photos,
+    likedPhotos,
     history,
     onLikePhoto,
-    onUnLikePhoto,
     unsplash,
     token,
 ) => {
@@ -114,7 +114,11 @@ export const separatePhotoBig = (
         history.location.pathname.split('/').length == 3
             ? history.location.pathname.split('/')[2]
             : null;
-    const dataPhotoBig = id ? photos.list.find(item => item.id == id) : null;
+    const dataPhotoBig = id
+        ? photos.list.find(item => item.id == id)
+            ? photos.list.find(item => item.id == id)
+            : likedPhotos.list.find(item => item.id == id)
+        : null;
 
     return dataPhotoBig
         ? {
@@ -143,34 +147,32 @@ export const separatePhotoBig = (
               },
               likeDataBig: {
                   count: dataPhotoBig.likes,
-                  color: dataPhotoBig.liked_by_user ? 'red' : 'black',
+                  color:
+                      dataPhotoBig.pubs == 'home'
+                          ? dataPhotoBig.liked_by_user
+                              ? 'red'
+                              : 'black'
+                          : 'red',
                   propsLike: {
                       onClick: onLikePhoto,
                       data: {
                           id,
                           unsplash,
                           token,
-                          action: !dataPhotoBig.liked_by_user,
+                          action:
+                              dataPhotoBig.pubs == 'liked'
+                                  ? false
+                                  : !dataPhotoBig.liked_by_user,
+                          pubs: dataPhotoBig.pubs,
+                          history,
                       },
                       className: 'button-like',
                   },
               },
-              btnLikePhoto: {
-                  className: 'btn-like',
-                  onClick: onLikePhoto,
-                  children: 'лайк',
-                  data: { id },
-              },
-              btnUnLikePhoto: {
-                  className: 'btn-unlike',
-                  onClick: onUnLikePhoto,
-                  children: 'дизлайк',
-                  data: { id },
-              },
               btnGoBack: {
                   className: 'btn-go-back',
                   onClick: history.goBack,
-                  children: 'вернуться к ленте фотографий',
+                  children: 'вернуться к ленте',
               },
           }
         : undefined;

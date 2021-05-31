@@ -30,8 +30,15 @@ export const LIST_PHOTOS_START = 'LIST_PHOTOS_START';
 export const LIST_PHOTOS_SUCCESS = 'LIST_PHOTOS_SUCCESS';
 export const LIST_PHOTOS_ERROR = 'LIST_PHOTOS_ERROR';
 export const LIST_PHOTOS_COUNT = 10;
-
 export const PHOTO_LIKE = 'PHOTO_LIKE';
+
+export const LIST_LIKED_PHOTOS_START = 'LIST_LIKED_PHOTOS_START';
+export const LIST_LIKED_PHOTOS_SUCCESS = 'LIST_LIKED_PHOTOS_SUCCESS';
+export const LIST_LIKED_PHOTOS_ERROR = 'LIST_LIKED_PHOTOS_ERROR';
+export const LIST_LIKED_PHOTOS_COUNT = 10;
+export const LIST_LIKED_ADD = 'LIST_LIKED_ADD';
+export const LIST_LIKED_DEL = 'LIST_LIKED_DEL';
+export const PROP_ADDED = 'needShow';
 
 export const WINDOW_WIDTH = document.documentElement.clientWidth - 32;
 export const WINDOW_HEIGHT = document.documentElement.clientHeight - 86;

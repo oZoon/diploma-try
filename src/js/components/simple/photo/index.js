@@ -23,6 +23,7 @@ export default props => {
                     <LikeData
                         count={props.likes}
                         color={props.liked_by_user ? 'red' : 'black'}
+                        pubs={props.pubs}
                     />
                     <PublicDate date={props.updated_at} />
                 </span>

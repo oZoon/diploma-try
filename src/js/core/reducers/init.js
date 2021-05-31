@@ -14,11 +14,14 @@ let init = {
     photos: {
         state: false,
         page: 0,
-        // time: 0,
         list: [],
         error: {},
-        // likedPhotosId: [],
-        // jsonLike: {},
+    },
+    likedPhotos: {
+        state: false,
+        page: 0,
+        list: [],
+        error: {},
     },
 };
 

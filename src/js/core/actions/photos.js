@@ -21,7 +21,6 @@ export const listPhotos = data => {
 };
 
 export const photosSuccess = (json, photos) => {
-    console.log(photos);
     const [page, list] = [photos.page + 1, getUniquePhotos(photos.list, json)];
     const result = {
         state: false,
@@ -42,15 +41,18 @@ export const photosError = err => {
 };
 
 export const likePhoto = data => {
-    const { id, unsplash, token, action } = data;
+    const { id, unsplash, token, action, pubs } = data;
     return dispatch => {
         dispatch(start());
-        unsplash.likePhoto(id, dispatch, token, action);
+        unsplash.likePhoto(id, dispatch, token, action, pubs);
     };
 };
-export const likePhotoResult = ({ photoId, action }) => {
+export const likePhotoResult = data => {
+    const { photoId, action } = data;
+    console.log(data);
     return {
         type: PHOTO_LIKE,
+        data,
         photoId,
         action,
     };

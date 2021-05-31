@@ -2,6 +2,7 @@ import React from 'react';
 import { separatePhotos, minHeightFeed, separatePhotoBig } from './utils';
 import ImgUp from '../../images/up2.png';
 import ImgDown from '../../images/down2.png';
+import { PROP_ADDED } from './constants';
 
 export default (props, unsplash) => {
     const {
@@ -10,10 +11,11 @@ export default (props, unsplash) => {
         user,
         history,
         photos,
+        likedPhotos,
         doContinueLogIn,
         onListPhotos,
+        onListLikedPhotos,
         onLikePhoto,
-        onUnLikePhoto,
     } = props;
 
     const authSecond =
@@ -41,13 +43,21 @@ export default (props, unsplash) => {
         history,
         unsplash,
     };
+    photos.list.forEach(element => (element.pubs = 'home'));
+    const lp = {};
+    lp.list = likedPhotos.list.filter(item => item[PROP_ADDED]);
+    lp.list.forEach(item => (item.pubs = 'liked'));
+    lp.page = likedPhotos.page;
+    lp.error = likedPhotos.error;
+    lp.state = likedPhotos.state;
     const tripleFeed = separatePhotos(photos.list);
+    const tripleFeedLiked = separatePhotos(lp.list);
     const minHeight = minHeightFeed(tripleFeed);
     const selectedPhoto = separatePhotoBig(
         photos,
+        likedPhotos,
         history,
         onLikePhoto,
-        onUnLikePhoto,
         unsplash,
         user.token,
     );
@@ -96,7 +106,6 @@ export default (props, unsplash) => {
                         ? 'загрузить еще'
                         : 'загрузить ленту фотографий',
             },
-            likedPhotosId: photos.likedPhotosId,
             propsBtnUp: {
                 className: 'button-move-top',
                 children: <img src={ImgUp} className='arrow' />,
@@ -107,14 +116,44 @@ export default (props, unsplash) => {
                 children: <img src={ImgDown} className='arrow' />,
             },
         },
-        isBusy: photos.state,
+        isBusy: photos.state || lp.state,
         showBusy: {
             size: 'small',
             className: 'loading-small',
         },
         selectedPhoto,
         collections: {},
-        liked: {},
+        liked: {
+            tripleFeedLiked,
+            propsNextPhotos:
+                lp.list.length == user.json.total_likes
+                    ? null
+                    : {
+                          className:
+                              lp.list.length > 0
+                                  ? 'button-next-photos'
+                                  : 'button-first-photos',
+                          onClick: onListLikedPhotos,
+                          data: {
+                              likedPhotos: lp,
+                              unsplash,
+                              username: user.json.username,
+                          },
+                          children:
+                              lp.list.length > 0
+                                  ? 'загрузить еще лайки'
+                                  : 'загрузить ленту лайков',
+                      },
+            propsBtnUp: {
+                className: 'button-move-top',
+                children: <img src={ImgUp} className='arrow' />,
+            },
+            propsNavVisible: photos.list.length > 0 ? 'block' : 'none',
+            propsBtnDown: {
+                className: 'button-move-bottom',
+                children: <img src={ImgDown} className='arrow' />,
+            },
+        },
     };
 
     return {

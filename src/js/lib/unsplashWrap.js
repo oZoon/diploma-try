@@ -1,11 +1,25 @@
 import Unsplash, { toJson } from 'unsplash-js';
-import { URL_SITE, ACCESS_KEY, SECRET, LIST_PHOTOS_COUNT } from './constants';
+import {
+    URL_SITE,
+    ACCESS_KEY,
+    SECRET,
+    LIST_PHOTOS_COUNT,
+    LIST_LIKED_PHOTOS_COUNT,
+    PROP_ADDED,
+} from './constants';
 import { userSuccess, userError } from '../core/actions/user';
 import {
     photosSuccess,
     photosError,
     likePhotoResult,
 } from '../core/actions/photos';
+import {
+    likedPhotosSuccess,
+    likedPhotosError,
+    // likedLikePhotoResult,
+    addToLikedList,
+    delFromLikedList,
+} from '../core/actions/likedPhotos';
 import { changeUserLike } from '../core/actions/user';
 
 class UnsplashWrap {
@@ -77,16 +91,43 @@ class UnsplashWrap {
             });
     }
 
-    async likePhoto(photoId, dispatch, token, action) {
+    async getLikedList(likedPhotos, dispatch, username) {
+        this.unsplash.users
+            .likes(
+                username,
+                likedPhotos.page + 1,
+                LIST_LIKED_PHOTOS_COUNT,
+                'latest',
+            )
+            .then(toJson)
+            .then(json => {
+                const data = JSON.parse(JSON.stringify(json));
+                data.forEach(item => (item[PROP_ADDED] = true));
+                dispatch(likedPhotosSuccess(data, likedPhotos));
+            })
+            .catch(error => {
+                dispatch(likedPhotosError(error));
+            });
+    }
+
+    async likePhoto(photoId, dispatch, token, action, pubs) {
         this.setToken(token);
         const request = action
             ? this.unsplash.photos.likePhoto(photoId)
             : this.unsplash.photos.unlikePhoto(photoId);
         request
             .then(toJson)
-            .then(() => {
+            .then(json => {
+                console.log(json);
                 dispatch(changeUserLike(action == true ? 1 : -1));
                 dispatch(likePhotoResult({ photoId, action }));
+                if (action) {
+                    console.log('action = true');
+                    dispatch(addToLikedList({ photo: json.photo }));
+                } else {
+                    console.log('action = false');
+                    dispatch(delFromLikedList({ id: json.photo.id }));
+                }
             })
             .catch(error => {
                 dispatch(photosError(error));
