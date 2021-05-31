@@ -59,21 +59,21 @@ export default (props, unsplash) => {
                 link: 'home',
                 text: user.name,
             },
-            propsUserPhotos: {
-                link: 'photos',
-                text: 'фотографии',
-                number: user.json.total_photos,
-            },
-            propsUserCollections: {
-                link: 'collections',
-                text: 'коллекции',
-                number: user.json.total_collections,
-            },
-            propsUserLiked: {
-                link: 'liked',
-                text: 'лайки',
-                number: user.json.total_likes,
-            },
+            // propsUserPhotos: {
+            //     link: 'photos',
+            //     text: 'фотографии',
+            //     number: user.json.total_photos,
+            // },
+            // propsUserCollections: {
+            //     link: 'collections',
+            //     text: 'коллекции',
+            //     number: user.json.total_collections,
+            // },
+            // propsUserLiked: {
+            //     link: 'liked',
+            //     text: 'лайки',
+            //     number: user.json.total_likes,
+            // },
             propsLogOut: {
                 onLogOut,
                 history,

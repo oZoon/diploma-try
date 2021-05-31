@@ -15,8 +15,8 @@ export const SECRET = 'NEbVoZN0xAL1MJkl9GCIfHmud75H71MjACB2fo0UdiU';
 export const URL_USER = {
     home: '/',
     photo: '/photo',
-    collections: '/collections',
-    liked: '/liked',
+    // collections: '/collections',
+    // liked: '/liked',
 };
 export const PHOTO_WIDTH = 300;
 

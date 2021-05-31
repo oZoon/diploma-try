@@ -11,9 +11,9 @@ export default props => {
             <div className='container'>
                 <UserLink {...props.propsUserName} />
                 <Divider />
-                <UserLink {...props.propsUserPhotos} />
+                {/* <UserLink {...props.propsUserPhotos} />
                 <UserLink {...props.propsUserCollections} />
-                <UserLink {...props.propsUserLiked} />
+                <UserLink {...props.propsUserLiked} /> */}
                 <LogOut {...props.propsLogOut} />
             </div>
         </nav>
